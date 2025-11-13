@@ -1,0 +1,52 @@
+[
+  {
+    "id": "focus-loop",
+    "label": "Focus Loop",
+    "shortDescription": "Deep work, single-threaded attention.",
+    "detail": "This node represents periods of deep focus where distractions are minimized and cognition moves in a single, intentional direction. The visual intensity maps to how \"locked in\" the system is.",
+    "x": 18,
+    "y": 32,
+    "intensity": 0.85,
+    "category": "attention"
+  },
+  {
+    "id": "resting-mesh",
+    "label": "Resting Mesh",
+    "shortDescription": "Default mode wandering.",
+    "detail": "Here the mind is wandering, making unexpected associations and background connections. It looks quiet from the outside, but there's a lot of pattern-making happening under the surface.",
+    "x": 62,
+    "y": 24,
+    "intensity": 0.4,
+    "category": "rest"
+  },
+  {
+    "id": "signal-boost",
+    "label": "Signal Boost",
+    "shortDescription": "New idea coming online.",
+    "detail": "A new idea or connection has just fired and is propagating across the network. This node visualizes that first spark when something \"clicks\" conceptually.",
+    "x": 40,
+    "y": 58,
+    "intensity": 0.95,
+    "category": "insight"
+  },
+  {
+    "id": "error-correction",
+    "label": "Error Correction",
+    "shortDescription": "Debugging, reframing, learning.",
+    "detail": "The system is noticing a mismatch between expectation and reality and is actively updating. This is where debugging, reframing, and actual learning live.",
+    "x": 73,
+    "y": 66,
+    "intensity": 0.7,
+    "category": "learning"
+  },
+  {
+    "id": "social-resonance",
+    "label": "Social Resonance",
+    "shortDescription": "Feedback from other minds.",
+    "detail": "Signals from conversations, collaboration, and shared attention. This node tracks how external input amplifies, distorts, or grounds internal narratives.",
+    "x": 25,
+    "y": 76,
+    "intensity": 0.6,
+    "category": "social"
+  }
+]
