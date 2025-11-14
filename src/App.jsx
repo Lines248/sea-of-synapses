@@ -5,7 +5,6 @@ import Footer from "./components/Footer";
 import SynapseGrid from "./components/SynapseGrid";
 import NodeDetailPanel from "./components/NodeDetailPanel";
 import { useNodeData } from "./hooks/useNodeData";
-import "./styles/globals.css";
 
 function App() {
   const { nodes, getNodeById } = useNodeData();
@@ -15,10 +14,11 @@ function App() {
   const selectedNode = selectedId ? getNodeById(selectedId) : null;
 
   return (
-    <div className="flex min-h-screen flex-col bg-slate-950 text-slate-50">
+    <div className="w-screen min-h-screen flex flex-col bg-slate-950 overflow-hidden">
       <Header />
 
-      <main className="relative flex flex-1 overflow-hidden h-full min-h-[80vh]">
+      {/* MAIN AREA must have defined height */}
+      <main className="relative flex w-full h-[calc(100vh-140px)] overflow-hidden">
         <SynapseGrid
           nodes={nodes}
           selectedId={selectedId}
@@ -29,7 +29,7 @@ function App() {
 
         <NodeDetailPanel
           node={selectedNode}
-          isOpen={Boolean(selectedNode)}
+          isOpen={!!selectedNode}
           onClose={() => setSelectedId(null)}
         />
       </main>
