@@ -18,7 +18,7 @@ function App() {
     <div className="flex min-h-screen flex-col bg-slate-950 text-slate-50">
       <Header />
 
-      <main className="relative flex flex-1 overflow-hidden">
+      <main className="relative flex flex-1 overflow-hidden h-full min-h-[80vh]">
         <SynapseGrid
           nodes={nodes}
           selectedId={selectedId}
