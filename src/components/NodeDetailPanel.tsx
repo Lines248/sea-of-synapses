@@ -15,7 +15,6 @@ const NodeDetailPanel: React.FC<NodeDetailPanelProps> = ({
 }) => {
   const closeButtonRef = useRef<HTMLButtonElement | null>(null);
 
-  // ESC key handler
   useEffect(() => {
     if (!isOpen) return;
 
@@ -29,7 +28,6 @@ const NodeDetailPanel: React.FC<NodeDetailPanelProps> = ({
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [isOpen, onClose]);
 
-  // Focus the close button when panel opens
   useEffect(() => {
     if (isOpen && closeButtonRef.current) {
       closeButtonRef.current.focus();
@@ -57,7 +55,7 @@ const NodeDetailPanel: React.FC<NodeDetailPanelProps> = ({
         `,
       }}
     >
-      {/* Multi-layer gradient border accent */}
+
       <div 
         className="absolute left-0 top-0 h-full w-[2px]"
         style={{
@@ -72,7 +70,6 @@ const NodeDetailPanel: React.FC<NodeDetailPanelProps> = ({
         }}
       />
       
-      {/* Header section */}
       <div className="mb-9 flex items-start justify-between gap-5">
         <div className="flex-1">
           <div className="mb-4 flex items-center gap-3">
@@ -99,7 +96,6 @@ const NodeDetailPanel: React.FC<NodeDetailPanelProps> = ({
         </button>
       </div>
 
-      {/* EEG-style divider */}
       <div className="mb-7 flex items-center gap-3">
         <div className="flex-1 h-[1px] bg-gradient-to-r from-transparent via-slate-700/40 to-slate-700/60"></div>
         <div className="flex gap-1.5 items-center">
@@ -120,9 +116,7 @@ const NodeDetailPanel: React.FC<NodeDetailPanelProps> = ({
         <div className="flex-1 h-[1px] bg-gradient-to-r from-slate-700/60 via-slate-700/40 to-transparent"></div>
       </div>
 
-      {/* Content section */}
       <div className="space-y-6">
-        {/* Detail text */}
         <div 
           className="rounded-xl p-6 backdrop-blur-md"
           style={{
@@ -140,7 +134,6 @@ const NodeDetailPanel: React.FC<NodeDetailPanelProps> = ({
           </p>
         </div>
 
-        {/* Category badge */}
         <div 
           className="flex items-center justify-between rounded-xl px-5 py-4 backdrop-blur-md"
           style={{
@@ -164,7 +157,6 @@ const NodeDetailPanel: React.FC<NodeDetailPanelProps> = ({
           </span>
         </div>
 
-        {/* Intensity meter */}
         <div 
           className="flex items-center justify-between rounded-xl px-5 py-4 backdrop-blur-md"
           style={{

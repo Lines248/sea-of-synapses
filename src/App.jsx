@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import SynapseGrid from "./components/SynapseGrid";
 import NodeDetailPanel from "./components/NodeDetailPanel";
 import { useNodeData } from "./hooks/useNodeData";
+import "./styles/globals.css";
 
 function App() {
   const { nodes, getNodeById } = useNodeData();
@@ -17,7 +18,6 @@ function App() {
     <div className="w-screen min-h-screen flex flex-col bg-slate-950 overflow-hidden">
       <Header />
 
-      {/* MAIN AREA must have defined height */}
       <main className="relative flex w-full h-[calc(100vh-140px)] overflow-hidden">
         <SynapseGrid
           nodes={nodes}

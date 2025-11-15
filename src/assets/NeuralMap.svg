@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 1200 800"
+>
+  <defs>
+    <linearGradient id="bgFade" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#020617" />
+      <stop offset="100%" stop-color="#020617" stop-opacity="0.9" />
+    </linearGradient>
+  </defs>
+
+  <!-- subtle background wash -->
+  <rect width="1200" height="800" fill="url(#bgFade)" />
+
+  <!-- main organic “coastline” strokes -->
+  <g
+    fill="none"
+    stroke="#38bdf8"
+    stroke-width="1.3"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    opacity="0.55"
+  >
+    <path d="M 50 120 C 260 80 410 90 620 140 C 830 190 1010 150 1150 110" />
+    <path d="M 80 250 C 210 220 340 230 470 280 C 600 330 720 320 860 290 C 1020 255 1110 260 1170 275" />
+    <path d="M 40 410 C 220 360 380 380 520 435 C 660 490 790 485 930 440 C 1040 405 1120 400 1185 415" />
+    <path d="M 70 560 C 210 520 340 525 470 575 C 600 625 745 630 880 600 C 1020 565 1110 565 1175 580" />
+    <path d="M 110 690 C 280 660 430 665 560 705 C 690 745 820 745 960 715 C 1070 690 1135 685 1190 695" />
+  </g>
+
+  <!-- smaller branching filaments -->
+  <g
+    fill="none"
+    stroke="#7dd3fc"
+    stroke-width="0.9"
+    stroke-linecap="round"
+    opacity="0.55"
+  >
+    <path d="M 260 210 C 280 260 305 295 340 320" />
+    <path d="M 340 320 C 360 340 385 360 420 370" />
+    <path d="M 560 190 C 575 225 600 250 630 265" />
+    <path d="M 630 265 C 660 280 690 295 720 320" />
+
+    <path d="M 310 470 C 330 510 360 540 395 555" />
+    <path d="M 395 555 C 430 570 470 585 510 595" />
+
+    <path d="M 780 360 C 800 390 820 410 850 425" />
+    <path d="M 850 425 C 880 440 910 450 945 455" />
+
+    <path d="M 720 630 C 745 655 770 675 800 690" />
+    <path d="M 800 690 C 835 705 870 715 905 720" />
+  </g>
+
+  <!-- node points -->
+  <g fill="#e0f2fe" opacity="0.9">
+    <circle cx="260" cy="210" r="3" />
+    <circle cx="340" cy="320" r="3" />
+    <circle cx="560" cy="190" r="3" />
+    <circle cx="630" cy="265" r="3" />
+    <circle cx="310" cy="470" r="3" />
+    <circle cx="395" cy="555" r="3" />
+    <circle cx="780" cy="360" r="3" />
+    <circle cx="850" cy="425" r="3" />
+    <circle cx="720" cy="630" r="3" />
+    <circle cx="800" cy="690" r="3" />
+  </g>
+</svg>

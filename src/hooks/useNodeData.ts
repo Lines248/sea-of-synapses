@@ -8,7 +8,7 @@ export interface SynapseNodeData {
   detail: string;
   x: number; 
   y: number; 
-  intensity: number; // 0–1
+  intensity: number; 
   category: string;
 }
 

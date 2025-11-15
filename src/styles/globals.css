@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ----------------------------------------- */
+/* Base Styles                                */
+/* ----------------------------------------- */
 :root {
   color-scheme: dark;
 }
@@ -13,35 +16,57 @@ body {
   overflow-x: hidden;
 }
 
-@keyframes slowPulse {
-  0%, 100% { opacity: 0.75; }
-  50% { opacity: 1; }
-}
+/* ----------------------------------------- */
+/* Background Animations                      */
+/* ----------------------------------------- */
 
-.animate-slowPulse {
-  animation: slowPulse 16s ease-in-out infinite;
+@keyframes slowPulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.85; }
+  100% { opacity: 1; }
 }
 
 @keyframes slowDrift {
-  0% { transform: translate(0px, 0px); }
-  50% { transform: translate(-12px, -8px); }
-  100% { transform: translate(0px, 0px); }
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(-60px, -40px); }
 }
 
-.animate-slowDrift {
-  animation: slowDrift 22s ease-in-out infinite;
+/* Also exposed via Tailwind config */
+.animate-slowPulse { animation: slowPulse 6s ease-in-out infinite; }
+.animate-slowDrift { animation: slowDrift 25s linear infinite; }
+
+/* ----------------------------------------- */
+/* Synapse Connection Lines                   */
+/* ----------------------------------------- */
+
+@keyframes synapsePulse {
+  0% { stroke-dashoffset: 0; opacity: 0.15; }
+  50% { stroke-dashoffset: -12; opacity: 0.9; }
+  100% { stroke-dashoffset: -24; opacity: 0.15; }
 }
 
-/* Panel slide-in animation */
+.synapse-line {
+  stroke: rgba(56, 189, 248, 0.75);
+  stroke-linecap: round;
+  stroke-dasharray: 2 6;
+  filter: drop-shadow(0 0 6px rgba(56, 189, 248, 0.6));
+}
+
+.animate-synapsePulse {
+  animation: synapsePulse 4.5s ease-in-out infinite;
+}
+
+/* ----------------------------------------- */
+/* Panel + UI Animations                      */
+/* ----------------------------------------- */
+
 @keyframes panel-slide-in {
   from {
     transform: translateX(100%) scale(0.98);
     opacity: 0;
     backdrop-filter: blur(0px) saturate(100%);
   }
-  50% {
-    opacity: 0.5;
-  }
+  50% { opacity: 0.5; }
   to {
     transform: translateX(0) scale(1);
     opacity: 1;
@@ -53,47 +78,9 @@ body {
   animation: panel-slide-in 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-/* EEG pulse animation */
-@keyframes eeg-pulse {
-  0%,
-  100% {
-    opacity: 0.4;
-    transform: scaleY(0.7);
-  }
-  50% {
-    opacity: 0.9;
-    transform: scaleY(1.4);
-  }
-}
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes zoom-in { from { transform: scale(0.95); opacity: 0; } to { transform: scale(1); opacity: 1; } }
 
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes zoom-in {
-  from {
-    transform: scale(0.95);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-.animate-in {
-  animation-fill-mode: both;
-}
-
-.fade-in-0 {
-  animation: fade-in 0.2s ease-out;
-}
-
-.zoom-in-95 {
-  animation: zoom-in 0.2s ease-out;
-}
+.animate-in { animation-fill-mode: both; }
+.fade-in-0 { animation: fade-in 0.2s ease-out; }
+.zoom-in-95 { animation: zoom-in 0.2s ease-out; }

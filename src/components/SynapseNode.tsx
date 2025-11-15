@@ -17,6 +17,8 @@ const SynapseNode = ({
   onHover,
 }: Props) => {
   const isActive = isSelected || isHovered;
+
+  // orb size scales with intensity
   const size = 38 + node.intensity * 40;
 
   return (
@@ -26,10 +28,9 @@ const SynapseNode = ({
         left: `${node.x}%`,
         top: `${node.y}%`,
         transform: "translate(-50%, -50%)",
-        zIndex: 50, // FORCE HIGH VISIBILITY
       }}
     >
-      {/* MAIN ORB */}
+      {/* INTERACTIVE BUTTON (NODE) */}
       <button
         type="button"
         onClick={() => onSelect(node.id)}
@@ -38,32 +39,41 @@ const SynapseNode = ({
         onFocus={() => onHover(node.id)}
         onBlur={() => onHover(null)}
         aria-label={node.label}
-        className="relative rounded-full transition-all duration-300 hover:scale-110 active:scale-110 focus:outline-none"
+        className={`
+          relative rounded-full
+          transition-all duration-300 
+          hover:scale-110 focus:scale-110 active:scale-110
+          outline-none
+        `}
         style={{
           width: size,
           height: size,
         }}
       >
-        {/* BACK GLOW */}
+        {/* OUTER GLOW — DRIFT + PULSE */}
         <div
-          className="absolute rounded-full blur-2xl"
+          className={`
+            absolute rounded-full blur-3xl
+            pointer-events-none
+            animate-slowPulse animate-slowDrift
+          `}
           style={{
-            width: size * 2,
-            height: size * 2,
-            background: isActive
-              ? "rgba(56, 189, 248, 0.45)"
-              : "rgba(56, 189, 248, 0.25)",
+            width: size * 2.3,
+            height: size * 2.3,
             left: "50%",
             top: "50%",
             transform: "translate(-50%, -50%)",
-            opacity: 1,
-            zIndex: -1,
+            background: isActive
+              ? "rgba(56,189,248,0.55)"
+              : "rgba(56,189,248,0.32)",
+            filter: "blur(40px)",
           }}
         />
 
-        {/* ORB CORE */}
+        {/* INNER GLOW CORE */}
         <div
-          className="absolute rounded-full shadow-lg transition-all duration-300"
+          className="absolute rounded-full transition-all duration-300 shadow-xl
+                     animate-slowPulse"
           style={{
             width: size,
             height: size,
@@ -71,21 +81,21 @@ const SynapseNode = ({
             top: "50%",
             transform: "translate(-50%, -50%)",
             background: isActive
-              ? "radial-gradient(circle, #e0f2fe 0%, #38bdf8 100%)"
-              : "radial-gradient(circle, #bae6fd 0%, #0ea5e9 100%)",
+              ? "radial-gradient(circle, #ecfeff 0%, #38bdf8 65%, #0ea5e9 100%)"
+              : "radial-gradient(circle, #dbeafe 0%, #60a5fa 65%, #0ea5e9 100%)",
             boxShadow: isActive
-              ? "0 0 30px rgba(56, 189, 248, 0.8)"
-              : "0 0 18px rgba(56, 189, 248, 0.5)",
+              ? "0 0 34px rgba(56,189,248,0.85)"
+              : "0 0 18px rgba(56,189,248,0.55)",
           }}
         />
       </button>
 
       {/* LABEL */}
       <div
-        className="text-sky-50 text-xs font-semibold text-center mt-2 transition-opacity duration-300"
+        className="mt-2 text-center text-sky-50 text-xs font-medium transition-opacity duration-300"
         style={{
           opacity: isActive ? 1 : 0.8,
-          textShadow: "0 2px 6px rgba(0,0,0,0.7)",
+          textShadow: "0 2px 7px rgba(0,0,0,0.65)",
         }}
       >
         {node.label}
