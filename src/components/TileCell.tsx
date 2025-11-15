@@ -11,7 +11,7 @@ export const TileCell = ({ elevated = false, children }: Props) => {
       className="
         group relative overflow-hidden rounded-xl
         border border-white/5
-        bg-white/[0.025]
+        bg-white/[0.005]
         backdrop-blur-[14px]
         shadow-[0_0_25px_rgba(0,0,0,0.25)]
         transition-all duration-500

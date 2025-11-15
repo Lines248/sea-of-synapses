@@ -39,17 +39,18 @@ const SynapseGrid = ({
 
       </div>
 
-<div className="absolute inset-0 z-[5] pointer-events-none">
+ <div className="absolute inset-0 z-[0] pointer-events-none">
   <NeuralBackground />
+</div>
 
-  <TileGrid>
+  <div className="absolute inset-0 z-[5] pointer-events-none">
+   <TileGrid>
     {Array.from({ length: 64 }).map((_, i) => (
       <TileCell key={i} />
     ))}
-  </TileGrid>
-</div>
-
-      <SynapseConnections nodes={nodes} />
+   </TileGrid>
+  </div>
+      <SynapseConnections nodes={nodes} className="z-10" />
 
       <div className="absolute inset-0 z-20">
         {nodes.map((node) => (

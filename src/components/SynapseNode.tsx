@@ -18,7 +18,6 @@ const SynapseNode = ({
 }: Props) => {
   const isActive = isSelected || isHovered;
 
-  // orb size scales with intensity
   const size = 38 + node.intensity * 40;
 
   return (
@@ -30,7 +29,7 @@ const SynapseNode = ({
         transform: "translate(-50%, -50%)",
       }}
     >
-      {/* INTERACTIVE BUTTON (NODE) */}
+   
       <button
         type="button"
         onClick={() => onSelect(node.id)}
@@ -50,7 +49,7 @@ const SynapseNode = ({
           height: size,
         }}
       >
-        {/* OUTER GLOW — DRIFT + PULSE */}
+     
         <div
           className={`
             absolute rounded-full blur-3xl
@@ -70,7 +69,6 @@ const SynapseNode = ({
           }}
         />
 
-        {/* INNER GLOW CORE */}
         <div
           className="absolute rounded-full transition-all duration-300 shadow-xl
                      animate-slowPulse"
@@ -89,8 +87,7 @@ const SynapseNode = ({
           }}
         />
       </button>
-
-      {/* LABEL */}
+      
       <div
         className="mt-2 text-center text-sky-50 text-xs font-medium transition-opacity duration-300"
         style={{
