@@ -3,9 +3,9 @@ Sea of Synapses
 An interactive map of cognitive states
 by InLine Access Studio
 
-Purpose
+Live Link: https://sea-of-synapses-n1r7tym6r-lines-projects-a21b5825.vercel.app/
 
-Sea of Synapses turns high-level mental states into a visual, explorable network. By combining neuroscience motifs with modern UI/UX design, the project provides a metaphorical “map” of how cognition, creativity, attention, and social resonance interconnect — making the abstract feel tangible.
+Data Visualization prototype
 
 Design Philosophy
 	• Neural Aesthetic: A background SVG of flowing neural pathways sets the spatial context.
