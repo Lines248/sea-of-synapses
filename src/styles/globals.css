@@ -2,9 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ----------------------------------------- */
-/* Base Styles                                */
-/* ----------------------------------------- */
+
 :root {
   color-scheme: dark;
 }
@@ -16,9 +14,6 @@ body {
   overflow-x: hidden;
 }
 
-/* ----------------------------------------- */
-/* Background Animations                      */
-/* ----------------------------------------- */
 
 @keyframes slowPulse {
   0% { opacity: 1; }
@@ -31,13 +26,9 @@ body {
   100% { transform: translate(-60px, -40px); }
 }
 
-/* Also exposed via Tailwind config */
 .animate-slowPulse { animation: slowPulse 6s ease-in-out infinite; }
 .animate-slowDrift { animation: slowDrift 25s linear infinite; }
 
-/* ----------------------------------------- */
-/* Synapse Connection Lines                   */
-/* ----------------------------------------- */
 
 @keyframes synapsePulse {
   0% { stroke-dashoffset: 0; opacity: 0.15; }
@@ -56,9 +47,6 @@ body {
   animation: synapsePulse 4.5s ease-in-out infinite;
 }
 
-/* ----------------------------------------- */
-/* Panel + UI Animations                      */
-/* ----------------------------------------- */
 
 @keyframes panel-slide-in {
   from {
