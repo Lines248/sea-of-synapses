@@ -24,12 +24,10 @@ const SynapseGrid = ({
   return (
     <section className="relative w-full h-full overflow-hidden bg-slate-950">
 
-      {/* BACKGROUND */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(56,189,248,0.12),transparent_65%),radial-gradient(circle_at_80%_80%,rgba(56,189,248,0.10),transparent_65%),#020617] animate-slowPulse pointer-events-none" />
 
       <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:90px_90px] opacity-[0.18] animate-slowDrift pointer-events-none" />
 
-      {/* BRAIN */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
 <div className="
   w-[50%] h-[60%]
@@ -41,22 +39,18 @@ const SynapseGrid = ({
 
       </div>
 
-{/* NEW: Neural Map + Tiles */}
 <div className="absolute inset-0 z-[5] pointer-events-none">
   <NeuralBackground />
 
   <TileGrid>
-    {/* Fill tiles with empty cells for now */}
     {Array.from({ length: 64 }).map((_, i) => (
       <TileCell key={i} />
     ))}
   </TileGrid>
 </div>
 
-      {/* CONNECTION LINES */}
       <SynapseConnections nodes={nodes} />
 
-      {/* NODES */}
       <div className="absolute inset-0 z-20">
         {nodes.map((node) => (
           <SynapseNode

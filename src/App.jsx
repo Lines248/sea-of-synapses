@@ -1,4 +1,3 @@
-// src/App.jsx
 import { useState } from "react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -16,7 +15,7 @@ function App() {
 
   return (
     <div className="w-screen min-h-screen flex flex-col bg-slate-950 overflow-hidden">
-      <Header />
+      <Header selectedNode={selectedNode} />
 
       <main className="relative flex w-full h-[calc(100vh-140px)] overflow-hidden">
         <SynapseGrid

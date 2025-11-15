@@ -8,14 +8,12 @@ interface Props {
 const SynapseConnections = ({ nodes }: Props) => {
   if (!nodes || nodes.length < 2) return null;
 
-  // group nodes by category
   const categories: Record<string, SynapseNodeData[]> = {};
   nodes.forEach((n) => {
     if (!categories[n.category]) categories[n.category] = [];
     categories[n.category].push(n);
   });
 
-  // build connections for nodes in the same category
   const connections: {
     x1: number;
     y1: number;
@@ -45,7 +43,6 @@ const SynapseConnections = ({ nodes }: Props) => {
       preserveAspectRatio="none"
     >
       <defs>
-        {/* Soft neon glow */}
         <filter id="synGlow">
           <feGaussianBlur stdDeviation="1.6" result="blur" />
           <feMerge>
